@@ -1,0 +1,310 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbx56drcs8l7i"]
+
+[ext_resource type="Texture2D" uid="uid://dfnrcwb8at4bs" path="res://inventory.png" id="1_4t7g4"]
+[ext_resource type="Texture2D" uid="uid://bluinae2utehy" path="res://KBLr7OS.png" id="1_roc78"]
+[ext_resource type="Texture2D" uid="uid://ba52xakc62iue" path="res://Faceset.png" id="2_bx1f6"]
+[ext_resource type="Texture2D" uid="uid://qenwe53dd262" path="res://IconHeart.png" id="3_1o8xg"]
+[ext_resource type="Texture2D" uid="uid://c0o053y5gn82d" path="res://Guard.png" id="4_wvkhc"]
+[ext_resource type="Texture2D" uid="uid://d061pdnpmyceu" path="res://Boot.png" id="5_d7lnp"]
+[ext_resource type="Texture2D" uid="uid://cwxyqqj30w48c" path="res://tool_sword_b.png" id="5_roc78"]
+[ext_resource type="Texture2D" uid="uid://bg1udx62we47r" path="res://icon_target.png" id="6_wvkhc"]
+[ext_resource type="Texture2D" uid="uid://cpkul0bwv1bel" path="res://bolt_gold.png" id="8_ya8om"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70rpv"]
+atlas = ExtResource("1_4t7g4")
+region = Rect2(0, 64, 48, 48)
+
+[node name="BattleArena" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
+position = Vector2(-432, -284)
+texture = ExtResource("1_roc78")
+centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1152, 216)
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -216.0
+offset_right = 1152.0
+grow_vertical = 0
+
+[node name="Background" type="TextureRect" parent="CanvasLayer/UI"]
+modulate = Color(0.1728327, 0.17283267, 0.17283267, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 25.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_70rpv")
+
+[node name="Character" type="VBoxContainer" parent="CanvasLayer/UI"]
+custom_minimum_size = Vector2(576, 216)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="CanvasLayer/UI/Character"]
+custom_minimum_size = Vector2(0, 216)
+layout_mode = 2
+
+[node name="Portrait" type="HBoxContainer" parent="CanvasLayer/UI/Character/Control"]
+custom_minimum_size = Vector2(288, 180)
+layout_mode = 1
+offset_right = 288.0
+
+[node name="CharacterPortrait" type="TextureRect" parent="CanvasLayer/UI/Character/Control/Portrait"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_bx1f6")
+
+[node name="Name" type="HBoxContainer" parent="CanvasLayer/UI/Character/Control"]
+custom_minimum_size = Vector2(288, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+offset_right = 288.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Character/Control/Name"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Crusader"
+vertical_alignment = 1
+
+[node name="Stats" type="VBoxContainer" parent="CanvasLayer/UI/Character/Control"]
+custom_minimum_size = Vector2(100, 216)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -288.0
+offset_right = -188.0
+offset_bottom = 216.0
+grow_horizontal = 0
+
+[node name="Health" type="Control" parent="CanvasLayer/UI/Character/Control/Stats"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/UI/Character/Control/Stats/Health"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -16.0
+offset_right = 32.0
+offset_bottom = 16.0
+grow_vertical = 2
+size_flags_vertical = 0
+texture = ExtResource("3_1o8xg")
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Character/Control/Stats/Health"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "14/47"
+vertical_alignment = 1
+
+[node name="Defense" type="Control" parent="CanvasLayer/UI/Character/Control/Stats"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/UI/Character/Control/Stats/Defense"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -16.0
+offset_right = 32.0
+offset_bottom = 16.0
+grow_vertical = 2
+size_flags_vertical = 0
+texture = ExtResource("4_wvkhc")
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Character/Control/Stats/Defense"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "14/47"
+vertical_alignment = 1
+
+[node name="Damage" type="Control" parent="CanvasLayer/UI/Character/Control/Stats"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/UI/Character/Control/Stats/Damage"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -16.0
+offset_right = 32.0
+offset_bottom = 16.0
+grow_vertical = 2
+size_flags_vertical = 0
+texture = ExtResource("5_roc78")
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Character/Control/Stats/Damage"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "14/47"
+vertical_alignment = 1
+
+[node name="Speed" type="Control" parent="CanvasLayer/UI/Character/Control/Stats"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/UI/Character/Control/Stats/Speed"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -16.0
+offset_right = 32.0
+offset_bottom = 16.0
+grow_vertical = 2
+size_flags_vertical = 0
+texture = ExtResource("5_d7lnp")
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Character/Control/Stats/Speed"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "14/47"
+vertical_alignment = 1
+
+[node name="Accuracy" type="Control" parent="CanvasLayer/UI/Character/Control/Stats"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/UI/Character/Control/Stats/Accuracy"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -16.0
+offset_right = 32.0
+offset_bottom = 16.0
+grow_vertical = 2
+size_flags_vertical = 0
+texture = ExtResource("6_wvkhc")
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Character/Control/Stats/Accuracy"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "14/47"
+vertical_alignment = 1
+
+[node name="Crit" type="Control" parent="CanvasLayer/UI/Character/Control/Stats"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/UI/Character/Control/Stats/Crit"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -16.0
+offset_right = 32.0
+offset_bottom = 16.0
+grow_vertical = 2
+size_flags_vertical = 0
+texture = ExtResource("8_ya8om")
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Character/Control/Stats/Crit"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "14/47"
+vertical_alignment = 1
+
+[node name="Actions" type="VBoxContainer" parent="CanvasLayer/UI"]
+custom_minimum_size = Vector2(576, 216)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -576.0
+offset_bottom = 216.0
+grow_horizontal = 0
+
+[node name="Control" type="Control" parent="CanvasLayer/UI/Actions"]
+custom_minimum_size = Vector2(576, 216)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/Actions/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
