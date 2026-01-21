@@ -16,15 +16,15 @@ region = Rect2(0, 64, 48, 48)
 
 [node name="BattleArena" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
 position = Vector2(-432, -284)
 texture = ExtResource("1_roc78")
 centered = false
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="BottomUI" type="CanvasLayer" parent="."]
 
-[node name="UI" type="Control" parent="CanvasLayer"]
+[node name="UI" type="Control" parent="BottomUI"]
 custom_minimum_size = Vector2(1152, 216)
 layout_mode = 3
 anchors_preset = 2
@@ -34,7 +34,7 @@ offset_top = -216.0
 offset_right = 1152.0
 grow_vertical = 0
 
-[node name="Background" type="TextureRect" parent="CanvasLayer/UI"]
+[node name="Background" type="TextureRect" parent="BottomUI/UI"]
 modulate = Color(0.1728327, 0.17283267, 0.17283267, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -46,27 +46,27 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_70rpv")
 
-[node name="Character" type="VBoxContainer" parent="CanvasLayer/UI"]
+[node name="Character" type="VBoxContainer" parent="BottomUI/UI"]
 custom_minimum_size = Vector2(576, 216)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Control" type="Control" parent="CanvasLayer/UI/Character"]
+[node name="Control" type="Control" parent="BottomUI/UI/Character"]
 custom_minimum_size = Vector2(0, 216)
 layout_mode = 2
 
-[node name="Portrait" type="HBoxContainer" parent="CanvasLayer/UI/Character/Control"]
+[node name="Portrait" type="HBoxContainer" parent="BottomUI/UI/Character/Control"]
 custom_minimum_size = Vector2(288, 180)
 layout_mode = 1
 offset_right = 288.0
 
-[node name="CharacterPortrait" type="TextureRect" parent="CanvasLayer/UI/Character/Control/Portrait"]
+[node name="CharacterPortrait" type="TextureRect" parent="BottomUI/UI/Character/Control/Portrait"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_bx1f6")
 
-[node name="Name" type="HBoxContainer" parent="CanvasLayer/UI/Character/Control"]
+[node name="Name" type="HBoxContainer" parent="BottomUI/UI/Character/Control"]
 custom_minimum_size = Vector2(288, 0)
 layout_mode = 1
 anchors_preset = 2
@@ -76,29 +76,29 @@ offset_top = -42.0
 offset_right = 288.0
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/UI/Character/Control/Name"]
+[node name="Label" type="Label" parent="BottomUI/UI/Character/Control/Name"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Crusader"
 vertical_alignment = 1
 
-[node name="Stats" type="VBoxContainer" parent="CanvasLayer/UI/Character/Control"]
-custom_minimum_size = Vector2(100, 216)
+[node name="Stats" type="VBoxContainer" parent="BottomUI/UI/Character/Control"]
+custom_minimum_size = Vector2(80, 216)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -288.0
-offset_right = -188.0
+offset_right = -208.0
 offset_bottom = 216.0
 grow_horizontal = 0
 
-[node name="Health" type="Control" parent="CanvasLayer/UI/Character/Control/Stats"]
+[node name="Health" type="Control" parent="BottomUI/UI/Character/Control/Stats"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/UI/Character/Control/Stats/Health"]
+[node name="Icon" type="TextureRect" parent="BottomUI/UI/Character/Control/Stats/Health"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
 anchors_preset = 4
@@ -111,7 +111,7 @@ grow_vertical = 2
 size_flags_vertical = 0
 texture = ExtResource("3_1o8xg")
 
-[node name="Label" type="Label" parent="CanvasLayer/UI/Character/Control/Stats/Health"]
+[node name="Label" type="Label" parent="BottomUI/UI/Character/Control/Stats/Health"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -126,12 +126,12 @@ grow_vertical = 2
 text = "15/47"
 vertical_alignment = 1
 
-[node name="Defense" type="Control" parent="CanvasLayer/UI/Character/Control/Stats"]
+[node name="Defense" type="Control" parent="BottomUI/UI/Character/Control/Stats"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/UI/Character/Control/Stats/Defense"]
+[node name="Icon" type="TextureRect" parent="BottomUI/UI/Character/Control/Stats/Defense"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
 anchors_preset = 4
@@ -144,7 +144,7 @@ grow_vertical = 2
 size_flags_vertical = 0
 texture = ExtResource("4_wvkhc")
 
-[node name="Label" type="Label" parent="CanvasLayer/UI/Character/Control/Stats/Defense"]
+[node name="Label" type="Label" parent="BottomUI/UI/Character/Control/Stats/Defense"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -159,11 +159,11 @@ grow_vertical = 2
 text = "14/47"
 vertical_alignment = 1
 
-[node name="Damage" type="Control" parent="CanvasLayer/UI/Character/Control/Stats"]
+[node name="Damage" type="Control" parent="BottomUI/UI/Character/Control/Stats"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/UI/Character/Control/Stats/Damage"]
+[node name="Icon" type="TextureRect" parent="BottomUI/UI/Character/Control/Stats/Damage"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
 anchors_preset = 4
@@ -176,7 +176,7 @@ grow_vertical = 2
 size_flags_vertical = 0
 texture = ExtResource("5_roc78")
 
-[node name="Label" type="Label" parent="CanvasLayer/UI/Character/Control/Stats/Damage"]
+[node name="Label" type="Label" parent="BottomUI/UI/Character/Control/Stats/Damage"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -191,11 +191,11 @@ grow_vertical = 2
 text = "14/47"
 vertical_alignment = 1
 
-[node name="Speed" type="Control" parent="CanvasLayer/UI/Character/Control/Stats"]
+[node name="Speed" type="Control" parent="BottomUI/UI/Character/Control/Stats"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/UI/Character/Control/Stats/Speed"]
+[node name="Icon" type="TextureRect" parent="BottomUI/UI/Character/Control/Stats/Speed"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
 anchors_preset = 4
@@ -208,7 +208,7 @@ grow_vertical = 2
 size_flags_vertical = 0
 texture = ExtResource("5_d7lnp")
 
-[node name="Label" type="Label" parent="CanvasLayer/UI/Character/Control/Stats/Speed"]
+[node name="Label" type="Label" parent="BottomUI/UI/Character/Control/Stats/Speed"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -223,11 +223,11 @@ grow_vertical = 2
 text = "14/47"
 vertical_alignment = 1
 
-[node name="Accuracy" type="Control" parent="CanvasLayer/UI/Character/Control/Stats"]
+[node name="Accuracy" type="Control" parent="BottomUI/UI/Character/Control/Stats"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/UI/Character/Control/Stats/Accuracy"]
+[node name="Icon" type="TextureRect" parent="BottomUI/UI/Character/Control/Stats/Accuracy"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
 anchors_preset = 4
@@ -240,7 +240,7 @@ grow_vertical = 2
 size_flags_vertical = 0
 texture = ExtResource("6_wvkhc")
 
-[node name="Label" type="Label" parent="CanvasLayer/UI/Character/Control/Stats/Accuracy"]
+[node name="Label" type="Label" parent="BottomUI/UI/Character/Control/Stats/Accuracy"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -255,11 +255,11 @@ grow_vertical = 2
 text = "14/47"
 vertical_alignment = 1
 
-[node name="Crit" type="Control" parent="CanvasLayer/UI/Character/Control/Stats"]
+[node name="Crit" type="Control" parent="BottomUI/UI/Character/Control/Stats"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/UI/Character/Control/Stats/Crit"]
+[node name="Icon" type="TextureRect" parent="BottomUI/UI/Character/Control/Stats/Crit"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
 anchors_preset = 4
@@ -272,7 +272,7 @@ grow_vertical = 2
 size_flags_vertical = 0
 texture = ExtResource("8_ya8om")
 
-[node name="Label" type="Label" parent="CanvasLayer/UI/Character/Control/Stats/Crit"]
+[node name="Label" type="Label" parent="BottomUI/UI/Character/Control/Stats/Crit"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -287,7 +287,64 @@ grow_vertical = 2
 text = "14/47"
 vertical_alignment = 1
 
-[node name="Actions" type="VBoxContainer" parent="CanvasLayer/UI"]
+[node name="ActionsContainer" type="GridContainer" parent="BottomUI/UI/Character/Control"]
+custom_minimum_size = Vector2(208, 216)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -208.0
+offset_bottom = 220.0
+grow_horizontal = 0
+theme_override_constants/v_separation = 62
+columns = 3
+
+[node name="Attack" type="Button" parent="BottomUI/UI/Character/Control/ActionsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "Attack"
+
+[node name="Defend" type="Button" parent="BottomUI/UI/Character/Control/ActionsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "Defend"
+
+[node name="Item" type="Button" parent="BottomUI/UI/Character/Control/ActionsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "Item"
+
+[node name="Skill" type="Button" parent="BottomUI/UI/Character/Control/ActionsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "Skill 1"
+
+[node name="Button8" type="Button" parent="BottomUI/UI/Character/Control/ActionsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "Skill 2"
+
+[node name="Button9" type="Button" parent="BottomUI/UI/Character/Control/ActionsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "Skill 3"
+
+[node name="Button2" type="Button" parent="BottomUI/UI/Character/Control/ActionsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "Skill 4"
+
+[node name="Button3" type="Button" parent="BottomUI/UI/Character/Control/ActionsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "Skill 5"
+
+[node name="Button4" type="Button" parent="BottomUI/UI/Character/Control/ActionsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "Skill 6"
+
+[node name="Actions" type="VBoxContainer" parent="BottomUI/UI"]
 custom_minimum_size = Vector2(576, 216)
 layout_mode = 1
 anchors_preset = 1
@@ -297,11 +354,11 @@ offset_left = -576.0
 offset_bottom = 216.0
 grow_horizontal = 0
 
-[node name="Control" type="Control" parent="CanvasLayer/UI/Actions"]
+[node name="Control" type="Control" parent="BottomUI/UI/Actions"]
 custom_minimum_size = Vector2(576, 216)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/Actions/Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomUI/UI/Actions/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
