@@ -1,17 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://0ne5p273ibio"]
+[gd_scene load_steps=11 format=3 uid="uid://cbx56drcs8l7i"]
 
-[ext_resource type="Texture2D" uid="uid://dfnrcwb8at4bs" path="res://inventory.png" id="1_4t7g4"]
-[ext_resource type="Texture2D" uid="uid://bluinae2utehy" path="res://KBLr7OS.png" id="1_roc78"]
-[ext_resource type="Texture2D" uid="uid://ba52xakc62iue" path="res://Faceset.png" id="2_bx1f6"]
-[ext_resource type="Texture2D" uid="uid://qenwe53dd262" path="res://IconHeart.png" id="3_1o8xg"]
-[ext_resource type="Texture2D" uid="uid://c0o053y5gn82d" path="res://Guard.png" id="4_wvkhc"]
-[ext_resource type="Texture2D" uid="uid://d061pdnpmyceu" path="res://Boot.png" id="5_d7lnp"]
-[ext_resource type="Texture2D" uid="uid://cwxyqqj30w48c" path="res://tool_sword_b.png" id="5_roc78"]
-[ext_resource type="Texture2D" uid="uid://bg1udx62we47r" path="res://icon_target.png" id="6_wvkhc"]
-[ext_resource type="Texture2D" uid="uid://cpkul0bwv1bel" path="res://bolt_gold.png" id="8_ya8om"]
+[ext_resource type="Texture2D" uid="uid://bluinae2utehy" path="res://assets/KBLr7OS.png" id="1_yb4oc"]
+[ext_resource type="Texture2D" uid="uid://dfnrcwb8at4bs" path="res://assets/inventory.png" id="2_yspgq"]
+[ext_resource type="Texture2D" uid="uid://ba52xakc62iue" path="res://assets/Faceset.png" id="3_l7kcc"]
+[ext_resource type="Texture2D" uid="uid://qenwe53dd262" path="res://assets/IconHeart.png" id="4_kvrme"]
+[ext_resource type="Texture2D" uid="uid://c0o053y5gn82d" path="res://assets/Guard.png" id="5_8wat5"]
+[ext_resource type="Texture2D" uid="uid://cwxyqqj30w48c" path="res://assets/tool_sword_b.png" id="6_uhs84"]
+[ext_resource type="Texture2D" uid="uid://d061pdnpmyceu" path="res://assets/Boot.png" id="7_tmtb4"]
+[ext_resource type="Texture2D" uid="uid://bg1udx62we47r" path="res://assets/icon_target.png" id="8_ts8p1"]
+[ext_resource type="Texture2D" uid="uid://cpkul0bwv1bel" path="res://assets/bolt_gold.png" id="9_ei3no"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_70rpv"]
-atlas = ExtResource("1_4t7g4")
+atlas = ExtResource("2_yspgq")
 region = Rect2(0, 64, 48, 48)
 
 [node name="BattleArena" type="Node2D"]
@@ -19,19 +19,8 @@ region = Rect2(0, 64, 48, 48)
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
 position = Vector2(-432, -284)
-texture = ExtResource("1_roc78")
+texture = ExtResource("1_yb4oc")
 centered = false
-
-[node name="Warrior" type="Node2D" parent="."]
-position = Vector2(400, 200)
-
-[node name="Sprite2D" type="Sprite2D" parent="Warrior"]
-texture = ExtResource("2_bx1f6")
-
-[node name="Label" type="Label" parent="Warrior"]
-offset_top = 100.0
-text = "Warrior"
-horizontal_alignment = 1
 
 [node name="BottomUI" type="CanvasLayer" parent="."]
 
@@ -75,7 +64,7 @@ offset_right = 288.0
 [node name="CharacterPortrait" type="TextureRect" parent="BottomUI/UI/Character/Control/Portrait"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("2_bx1f6")
+texture = ExtResource("3_l7kcc")
 
 [node name="Name" type="HBoxContainer" parent="BottomUI/UI/Character/Control"]
 custom_minimum_size = Vector2(288, 0)
@@ -120,7 +109,7 @@ offset_right = 32.0
 offset_bottom = 16.0
 grow_vertical = 2
 size_flags_vertical = 0
-texture = ExtResource("3_1o8xg")
+texture = ExtResource("4_kvrme")
 
 [node name="Label" type="Label" parent="BottomUI/UI/Character/Control/Stats/Health"]
 layout_mode = 1
@@ -153,7 +142,7 @@ offset_right = 32.0
 offset_bottom = 16.0
 grow_vertical = 2
 size_flags_vertical = 0
-texture = ExtResource("4_wvkhc")
+texture = ExtResource("5_8wat5")
 
 [node name="Label" type="Label" parent="BottomUI/UI/Character/Control/Stats/Defense"]
 layout_mode = 1
@@ -185,7 +174,7 @@ offset_right = 32.0
 offset_bottom = 16.0
 grow_vertical = 2
 size_flags_vertical = 0
-texture = ExtResource("5_roc78")
+texture = ExtResource("6_uhs84")
 
 [node name="Label" type="Label" parent="BottomUI/UI/Character/Control/Stats/Damage"]
 layout_mode = 1
@@ -217,7 +206,7 @@ offset_right = 32.0
 offset_bottom = 16.0
 grow_vertical = 2
 size_flags_vertical = 0
-texture = ExtResource("5_d7lnp")
+texture = ExtResource("7_tmtb4")
 
 [node name="Label" type="Label" parent="BottomUI/UI/Character/Control/Stats/Speed"]
 layout_mode = 1
@@ -249,7 +238,7 @@ offset_right = 32.0
 offset_bottom = 16.0
 grow_vertical = 2
 size_flags_vertical = 0
-texture = ExtResource("6_wvkhc")
+texture = ExtResource("8_ts8p1")
 
 [node name="Label" type="Label" parent="BottomUI/UI/Character/Control/Stats/Accuracy"]
 layout_mode = 1
@@ -281,7 +270,7 @@ offset_right = 32.0
 offset_bottom = 16.0
 grow_vertical = 2
 size_flags_vertical = 0
-texture = ExtResource("8_ya8om")
+texture = ExtResource("9_ei3no")
 
 [node name="Label" type="Label" parent="BottomUI/UI/Character/Control/Stats/Crit"]
 layout_mode = 1

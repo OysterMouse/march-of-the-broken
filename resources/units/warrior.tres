@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=2 format=3 uid="uid://warrior1"]
+
+[ext_resource type="Script" path="res://scripts/unit_data.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_name = "Warrior"
+health = 150
+attack_power = 15
+defense = 10
+speed = 1.2
+abilities = ["Attack", "Defend", "Slash"]
+description = "A strong warrior with high defense."
+
