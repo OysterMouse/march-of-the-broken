@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://befg4wnuj3gba"]
+
+[ext_resource type="Script" uid="uid://df23bcyn1u72k" path="res://scripts/unit.gd" id="1_o7ajc"]
+[ext_resource type="Texture2D" uid="uid://ba52xakc62iue" path="res://assets/Faceset.png" id="2_faceset"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lf63s"]
+
+[node name="Unit" type="Area2D"]
+script = ExtResource("1_o7ajc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_faceset")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lf63s")
+

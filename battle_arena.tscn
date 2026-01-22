@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://0ne5p273ibio"]
+[gd_scene load_steps=13 format=3 uid="uid://0ne5p273ibio"]
 
 [ext_resource type="Texture2D" uid="uid://dfnrcwb8at4bs" path="res://inventory.png" id="1_4t7g4"]
 [ext_resource type="Texture2D" uid="uid://bluinae2utehy" path="res://KBLr7OS.png" id="1_roc78"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cwxyqqj30w48c" path="res://tool_sword_b.png" id="5_roc78"]
 [ext_resource type="Texture2D" uid="uid://bg1udx62we47r" path="res://icon_target.png" id="6_wvkhc"]
 [ext_resource type="Texture2D" uid="uid://cpkul0bwv1bel" path="res://bolt_gold.png" id="8_ya8om"]
+[ext_resource type="PackedScene" uid="uid://befg4wnuj3gba" path="res://scenes/unit.tscn" id="9_unit_scene"]
+[ext_resource type="Resource" uid="uid://b1l8ixvkj3g2b" path="res://resources/units/warrior.tres" id="10_warrior_data"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_70rpv"]
 atlas = ExtResource("1_4t7g4")
@@ -22,16 +24,9 @@ position = Vector2(-432, -284)
 texture = ExtResource("1_roc78")
 centered = false
 
-[node name="Warrior" type="Node2D" parent="."]
-position = Vector2(400, 200)
-
-[node name="Sprite2D" type="Sprite2D" parent="Warrior"]
-texture = ExtResource("2_bx1f6")
-
-[node name="Label" type="Label" parent="Warrior"]
-offset_top = 100.0
-text = "Warrior"
-horizontal_alignment = 1
+[node name="Warrior" parent="." instance=ExtResource("9_unit_scene")]
+position = Vector2(200, 100)
+unit_data = ExtResource("10_warrior_data")
 
 [node name="BottomUI" type="CanvasLayer" parent="."]
 

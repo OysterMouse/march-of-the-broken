@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3 uid="uid://rycddq6jk7y1"]
+
+[ext_resource type="Texture2D" uid="uid://b47vb3e7ewc3i" path="res://assets/Faceset - Copy3.png" id="1_66cta"]
+[ext_resource type="Script" uid="uid://bnsc3y33puucs" path="res://scripts/unit_data.gd" id="1_rdjhn"]
+
+[resource]
+script = ExtResource("1_rdjhn")
+unit_name = "Monk"
+icon = ExtResource("1_66cta")
+flip_icon = true
+metadata/_custom_type_script = "uid://bnsc3y33puucs"

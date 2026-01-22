@@ -9,3 +9,4 @@ extends Resource
 @export var abilities: Array[String] = []
 @export var description: String = "A new unit."
 @export var icon: Texture2D
+@export var flip_icon: bool = false

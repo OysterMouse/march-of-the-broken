@@ -1,26 +1,53 @@
-[gd_scene load_steps=11 format=3 uid="uid://cbx56drcs8l7i"]
+[gd_scene load_steps=17 format=3 uid="uid://cbx56drcs8l7i"]
 
+[ext_resource type="Script" uid="uid://bouod2nhxebns" path="res://scenes/battle_arena.gd" id="1_kvrme"]
 [ext_resource type="Texture2D" uid="uid://bluinae2utehy" path="res://assets/KBLr7OS.png" id="1_yb4oc"]
 [ext_resource type="Texture2D" uid="uid://dfnrcwb8at4bs" path="res://assets/inventory.png" id="2_yspgq"]
 [ext_resource type="Texture2D" uid="uid://ba52xakc62iue" path="res://assets/Faceset.png" id="3_l7kcc"]
 [ext_resource type="Texture2D" uid="uid://qenwe53dd262" path="res://assets/IconHeart.png" id="4_kvrme"]
 [ext_resource type="Texture2D" uid="uid://c0o053y5gn82d" path="res://assets/Guard.png" id="5_8wat5"]
+[ext_resource type="Resource" uid="uid://056tykq1kbrs" path="res://resources/units/crusader.tres" id="5_uhs84"]
+[ext_resource type="Resource" uid="uid://d4fr5qtpeitgt" path="res://resources/units/paladin.tres" id="6_tmtb4"]
 [ext_resource type="Texture2D" uid="uid://cwxyqqj30w48c" path="res://assets/tool_sword_b.png" id="6_uhs84"]
 [ext_resource type="Texture2D" uid="uid://d061pdnpmyceu" path="res://assets/Boot.png" id="7_tmtb4"]
+[ext_resource type="Resource" uid="uid://rycddq6jk7y1" path="res://resources/units/monk.tres" id="7_ts8p1"]
 [ext_resource type="Texture2D" uid="uid://bg1udx62we47r" path="res://assets/icon_target.png" id="8_ts8p1"]
 [ext_resource type="Texture2D" uid="uid://cpkul0bwv1bel" path="res://assets/bolt_gold.png" id="9_ei3no"]
+[ext_resource type="PackedScene" uid="uid://befg4wnuj3gba" path="res://scenes/unit.tscn" id="10_unit_scene"]
+[ext_resource type="Resource" uid="uid://b1l8ixvkj3g2b" path="res://resources/units/warrior.tres" id="11_warrior_data"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_70rpv"]
 atlas = ExtResource("2_yspgq")
 region = Rect2(0, 64, 48, 48)
 
 [node name="BattleArena" type="Node2D"]
+script = ExtResource("1_kvrme")
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
 position = Vector2(-432, -284)
 texture = ExtResource("1_yb4oc")
 centered = false
+
+[node name="Warrior" parent="." instance=ExtResource("10_unit_scene")]
+position = Vector2(397.00003, 290.00003)
+scale = Vector2(4.9305778, 11.611068)
+unit_data = ExtResource("11_warrior_data")
+
+[node name="Crusader" parent="." instance=ExtResource("10_unit_scene")]
+position = Vector2(285.00003, 290)
+scale = Vector2(4.9305778, 11.611068)
+unit_data = ExtResource("5_uhs84")
+
+[node name="Paladin" parent="." instance=ExtResource("10_unit_scene")]
+position = Vector2(170, 290.00003)
+scale = Vector2(4.9305778, 11.611068)
+unit_data = ExtResource("6_tmtb4")
+
+[node name="Monk" parent="." instance=ExtResource("10_unit_scene")]
+position = Vector2(58, 290)
+scale = Vector2(4.9305778, 11.611068)
+unit_data = ExtResource("7_ts8p1")
 
 [node name="BottomUI" type="CanvasLayer" parent="."]
 
@@ -79,7 +106,6 @@ grow_vertical = 0
 [node name="Label" type="Label" parent="BottomUI/UI/Character/Control/Name"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Crusader"
 vertical_alignment = 1
 
 [node name="Stats" type="VBoxContainer" parent="BottomUI/UI/Character/Control"]
@@ -365,3 +391,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[connection signal="input_event" from="Warrior" to="." method="_on_warrior_input_event"]
+[connection signal="input_event" from="Crusader" to="." method="_on_crusader_input_event"]
+[connection signal="input_event" from="Paladin" to="." method="_on_paladin_input_event"]
+[connection signal="input_event" from="Monk" to="." method="_on_monk_input_event"]

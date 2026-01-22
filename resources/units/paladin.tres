@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3 uid="uid://d4fr5qtpeitgt"]
+
+[ext_resource type="Texture2D" uid="uid://dk11475166pnu" path="res://assets/Faceset - Copy2.png" id="1_ai4uv"]
+[ext_resource type="Script" uid="uid://bnsc3y33puucs" path="res://scripts/unit_data.gd" id="1_x531p"]
+
+[resource]
+script = ExtResource("1_x531p")
+unit_name = "Paladin"
+icon = ExtResource("1_ai4uv")
+metadata/_custom_type_script = "uid://bnsc3y33puucs"

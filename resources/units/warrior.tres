@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="UnitData" load_steps=2 format=3 uid="uid://warrior1"]
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3 uid="uid://b1l8ixvkj3g2b"]
 
-[ext_resource type="Script" path="res://scripts/unit_data.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ba52xakc62iue" path="res://assets/Faceset.png" id="1_mehrk"]
+[ext_resource type="Script" uid="uid://bnsc3y33puucs" path="res://scripts/unit_data.gd" id="1_unit_data"]
 
 [resource]
-script = ExtResource("1_script")
+script = ExtResource("1_unit_data")
 unit_name = "Warrior"
 health = 150
 attack_power = 15
 defense = 10
 speed = 1.2
-abilities = ["Attack", "Defend", "Slash"]
+abilities = Array[String](["Attack", "Defend", "Slash"])
 description = "A strong warrior with high defense."
-
+icon = ExtResource("1_mehrk")
+flip_icon = true
