@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cbx56drcs8l7i"]
+[gd_scene load_steps=19 format=3 uid="uid://cbx56drcs8l7i"]
 
 [ext_resource type="Script" uid="uid://bouod2nhxebns" path="res://scenes/battle_arena.gd" id="1_kvrme"]
 [ext_resource type="Texture2D" uid="uid://bluinae2utehy" path="res://assets/KBLr7OS.png" id="1_yb4oc"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cpkul0bwv1bel" path="res://assets/bolt_gold.png" id="9_ei3no"]
 [ext_resource type="PackedScene" uid="uid://befg4wnuj3gba" path="res://scenes/unit.tscn" id="10_unit_scene"]
 [ext_resource type="Resource" uid="uid://b1l8ixvkj3g2b" path="res://resources/units/warrior.tres" id="11_warrior_data"]
+[ext_resource type="PackedScene" uid="uid://b221bc7ihjiar" path="res://scenes/enemy.tscn" id="16_ei3no"]
+[ext_resource type="Resource" uid="uid://dp4080my0yu70" path="res://resources/enemies/slime.tres" id="17_itwoe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_70rpv"]
 atlas = ExtResource("2_yspgq")
@@ -24,7 +26,6 @@ region = Rect2(0, 64, 48, 48)
 script = ExtResource("1_kvrme")
 
 [node name="Background" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
 position = Vector2(-432, -284)
 texture = ExtResource("1_yb4oc")
@@ -150,6 +151,7 @@ offset_top = -11.5
 offset_bottom = 11.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_font_sizes/font_size = 12
 text = "15/47"
 vertical_alignment = 1
 
@@ -183,6 +185,7 @@ offset_top = -11.5
 offset_bottom = 11.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_font_sizes/font_size = 12
 text = "14/47"
 vertical_alignment = 1
 
@@ -215,6 +218,7 @@ offset_top = -11.5
 offset_bottom = 11.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_font_sizes/font_size = 12
 text = "14/47"
 vertical_alignment = 1
 
@@ -247,6 +251,7 @@ offset_top = -11.5
 offset_bottom = 11.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_font_sizes/font_size = 12
 text = "14/47"
 vertical_alignment = 1
 
@@ -279,6 +284,7 @@ offset_top = -11.5
 offset_bottom = 11.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_font_sizes/font_size = 12
 text = "14/47"
 vertical_alignment = 1
 
@@ -311,6 +317,7 @@ offset_top = -11.5
 offset_bottom = 11.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_font_sizes/font_size = 12
 text = "14/47"
 vertical_alignment = 1
 
@@ -323,11 +330,10 @@ anchor_right = 1.0
 offset_left = -208.0
 offset_bottom = 220.0
 grow_horizontal = 0
-theme_override_constants/v_separation = 62
 columns = 3
 
 [node name="Attack" type="Button" parent="BottomUI/UI/Character/Control/ActionsContainer"]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(65, 32)
 layout_mode = 2
 text = "Attack"
 
@@ -337,7 +343,7 @@ layout_mode = 2
 text = "Defend"
 
 [node name="Item" type="Button" parent="BottomUI/UI/Character/Control/ActionsContainer"]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(65, 32)
 layout_mode = 2
 text = "Item"
 
@@ -392,6 +398,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Enemy" parent="." instance=ExtResource("16_ei3no")]
+position = Vector2(699, 390)
+enemy_data = ExtResource("17_itwoe")
 
 [connection signal="input_event" from="Warrior" to="." method="_on_warrior_input_event"]
 [connection signal="input_event" from="Crusader" to="." method="_on_crusader_input_event"]

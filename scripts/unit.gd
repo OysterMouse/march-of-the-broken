@@ -16,7 +16,7 @@ func _ready():
 	if unit_data:
 		print("Unit Name: %s" % unit_data.unit_name)
 		print("Health: %d" % unit_data.health)
-		print("Attack Power: %d" % unit_data.attack_power)
+		print("Damage: %d" % unit_data.damage)
 		print("Defense: %d" % unit_data.defense)
 		print("Speed: %.2f" % unit_data.speed)
 		print("Abilities: %s" % unit_data.abilities)

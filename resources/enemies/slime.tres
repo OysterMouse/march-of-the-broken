@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://dp4080my0yu70"]
+
+[ext_resource type="Texture2D" uid="uid://c3amossaj13k1" path="res://assets/slime.png" id="1_wcmes"]
+[ext_resource type="Script" uid="uid://cw8lp6xx3adv4" path="res://scripts/enemy_data.gd" id="2_pssbi"]
+
+[resource]
+script = ExtResource("2_pssbi")
+enemy_name = "Green Slime"
+health = 50
+damage = 4
+speed = 1.5
+description = "Ewwww"
+icon = ExtResource("1_wcmes")
+metadata/_custom_type_script = "uid://cw8lp6xx3adv4"

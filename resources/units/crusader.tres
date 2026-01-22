@@ -6,6 +6,8 @@
 [resource]
 script = ExtResource("1_gy2tv")
 unit_name = "Crusader"
+health = 75
+defense = 8
 icon = ExtResource("1_lr8ge")
 flip_icon = true
 metadata/_custom_type_script = "uid://bnsc3y33puucs"

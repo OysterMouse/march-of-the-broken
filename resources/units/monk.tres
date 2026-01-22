@@ -6,6 +6,8 @@
 [resource]
 script = ExtResource("1_rdjhn")
 unit_name = "Monk"
+damage = 13
+defense = 10
 icon = ExtResource("1_66cta")
 flip_icon = true
 metadata/_custom_type_script = "uid://bnsc3y33puucs"
