@@ -24,6 +24,7 @@ region = Rect2(0, 64, 48, 48)
 script = ExtResource("1_kvrme")
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
 position = Vector2(-432, -284)
 texture = ExtResource("1_yb4oc")
