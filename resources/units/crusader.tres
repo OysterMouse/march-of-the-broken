@@ -1,13 +1,17 @@
-[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3 uid="uid://056tykq1kbrs"]
+[gd_resource type="Resource" script_class="UnitData" load_steps=4 format=3 uid="uid://056tykq1kbrs"]
 
 [ext_resource type="Script" uid="uid://bnsc3y33puucs" path="res://scripts/unit_data.gd" id="1_gy2tv"]
-[ext_resource type="Texture2D" uid="uid://b14tt1qwlbosb" path="res://assets/Faceset - Copy.png" id="1_lr8ge"]
+[ext_resource type="Texture2D" uid="uid://ce2yp6bubwtvt" path="res://assets/rogues.png" id="1_lr8ge"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i1sf"]
+atlas = ExtResource("1_lr8ge")
+region = Rect2(32, 96, 32, 32)
 
 [resource]
 script = ExtResource("1_gy2tv")
 unit_name = "Crusader"
 health = 75
 defense = 8
-icon = ExtResource("1_lr8ge")
+icon = SubResource("AtlasTexture_2i1sf")
 flip_icon = true
 metadata/_custom_type_script = "uid://bnsc3y33puucs"

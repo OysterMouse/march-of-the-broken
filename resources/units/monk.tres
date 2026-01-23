@@ -1,13 +1,17 @@
-[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3 uid="uid://rycddq6jk7y1"]
+[gd_resource type="Resource" script_class="UnitData" load_steps=4 format=3 uid="uid://rycddq6jk7y1"]
 
-[ext_resource type="Texture2D" uid="uid://b47vb3e7ewc3i" path="res://assets/Faceset - Copy3.png" id="1_66cta"]
+[ext_resource type="Texture2D" uid="uid://ce2yp6bubwtvt" path="res://assets/rogues.png" id="1_66cta"]
 [ext_resource type="Script" uid="uid://bnsc3y33puucs" path="res://scripts/unit_data.gd" id="1_rdjhn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fjj2"]
+atlas = ExtResource("1_66cta")
+region = Rect2(96, 160, 32, 32)
 
 [resource]
 script = ExtResource("1_rdjhn")
 unit_name = "Monk"
 damage = 13
 defense = 10
-icon = ExtResource("1_66cta")
+icon = SubResource("AtlasTexture_6fjj2")
 flip_icon = true
 metadata/_custom_type_script = "uid://bnsc3y33puucs"

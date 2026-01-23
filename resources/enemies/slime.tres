@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://dp4080my0yu70"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3 uid="uid://dp4080my0yu70"]
 
-[ext_resource type="Texture2D" uid="uid://c3amossaj13k1" path="res://assets/slime.png" id="1_wcmes"]
+[ext_resource type="Texture2D" uid="uid://djfe1w0w38bp7" path="res://assets/monsters.png" id="1_wcmes"]
 [ext_resource type="Script" uid="uid://cw8lp6xx3adv4" path="res://scripts/enemy_data.gd" id="2_pssbi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pssbi"]
+atlas = ExtResource("1_wcmes")
+region = Rect2(160, 128, 32, 32)
 
 [resource]
 script = ExtResource("2_pssbi")
@@ -10,5 +14,5 @@ health = 50
 damage = 4
 speed = 1.5
 description = "Ewwww"
-icon = ExtResource("1_wcmes")
+icon = SubResource("AtlasTexture_pssbi")
 metadata/_custom_type_script = "uid://cw8lp6xx3adv4"

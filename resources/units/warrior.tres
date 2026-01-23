@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3 uid="uid://b1l8ixvkj3g2b"]
+[gd_resource type="Resource" script_class="UnitData" load_steps=4 format=3 uid="uid://b1l8ixvkj3g2b"]
 
-[ext_resource type="Texture2D" uid="uid://ba52xakc62iue" path="res://assets/Faceset.png" id="1_mehrk"]
+[ext_resource type="Texture2D" uid="uid://ce2yp6bubwtvt" path="res://assets/rogues.png" id="1_mehrk"]
 [ext_resource type="Script" uid="uid://bnsc3y33puucs" path="res://scripts/unit_data.gd" id="1_unit_data"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckf0k"]
+atlas = ExtResource("1_mehrk")
+region = Rect2(64, 32, 32, 32)
 
 [resource]
 script = ExtResource("1_unit_data")
@@ -12,5 +16,5 @@ defense = 10
 speed = 1.2
 abilities = Array[String](["Attack", "Defend", "Slash"])
 description = "A strong warrior with high defense."
-icon = ExtResource("1_mehrk")
+icon = SubResource("AtlasTexture_ckf0k")
 flip_icon = true

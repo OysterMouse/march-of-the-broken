@@ -32,23 +32,23 @@ texture = ExtResource("1_yb4oc")
 centered = false
 
 [node name="Warrior" parent="." instance=ExtResource("10_unit_scene")]
-position = Vector2(397.00003, 290.00003)
-scale = Vector2(4.9305778, 11.611068)
+position = Vector2(459, 347)
+scale = Vector2(6, 6)
 unit_data = ExtResource("11_warrior_data")
 
 [node name="Crusader" parent="." instance=ExtResource("10_unit_scene")]
-position = Vector2(285.00003, 290)
-scale = Vector2(4.9305778, 11.611068)
+position = Vector2(330, 347)
+scale = Vector2(6, 6)
 unit_data = ExtResource("5_uhs84")
 
 [node name="Paladin" parent="." instance=ExtResource("10_unit_scene")]
-position = Vector2(170, 290.00003)
-scale = Vector2(4.9305778, 11.611068)
+position = Vector2(202, 347)
+scale = Vector2(6, 6)
 unit_data = ExtResource("6_tmtb4")
 
 [node name="Monk" parent="." instance=ExtResource("10_unit_scene")]
-position = Vector2(58, 290)
-scale = Vector2(4.9305778, 11.611068)
+position = Vector2(74, 347)
+scale = Vector2(6, 6)
 unit_data = ExtResource("7_ts8p1")
 
 [node name="BottomUI" type="CanvasLayer" parent="."]
@@ -400,7 +400,23 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Enemy" parent="." instance=ExtResource("16_ei3no")]
-position = Vector2(699, 390)
+position = Vector2(669, 343)
+scale = Vector2(4, 4)
+enemy_data = ExtResource("17_itwoe")
+
+[node name="Enemy2" parent="." instance=ExtResource("16_ei3no")]
+position = Vector2(805, 343)
+scale = Vector2(4, 4)
+enemy_data = ExtResource("17_itwoe")
+
+[node name="Enemy3" parent="." instance=ExtResource("16_ei3no")]
+position = Vector2(941, 343)
+scale = Vector2(4, 4)
+enemy_data = ExtResource("17_itwoe")
+
+[node name="Enemy4" parent="." instance=ExtResource("16_ei3no")]
+position = Vector2(1077, 343)
+scale = Vector2(4, 4)
 enemy_data = ExtResource("17_itwoe")
 
 [connection signal="input_event" from="Warrior" to="." method="_on_warrior_input_event"]
